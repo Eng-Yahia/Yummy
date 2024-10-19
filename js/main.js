@@ -89,7 +89,7 @@ function putPic2(cartona, index) {
         <div id="${data.meals[index].idMeal}" class="inner my-4  rounded-3 overflow-hidden position-relative">
         <img class="w-100" src="${data.meals[index].strMealThumb}" alt="">
         
-        <a href="../html files/info.html"> <div  class="layer d-flex  align-items-center  ">
+        <a href="html files/info.html"> <div  class="layer d-flex  align-items-center  ">
         <h2 class="fw-bolder">${data.meals[index].strMeal}</h2>
         </div></a>
         </div>
