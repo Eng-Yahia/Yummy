@@ -53,7 +53,7 @@ async function getMeal() {
     res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
     data = await res.json();
     //    console.log(data);
-    putPic(input, 0);
+    putPic2(input, 0);
     storingId();
   } catch (error) {
     console.log("Error getting meals");
@@ -83,7 +83,33 @@ async function getMealsByName(test) {
   flag1 = 0;
 }
 
-// both
+function putPic2(cartona, index) {
+  if (flag1 == 1) {
+    cartona.innerHTML += `<div class="col-lg-3 col-md-4 col-12 ">
+        <div id="${data.meals[index].idMeal}" class="inner my-4  rounded-3 overflow-hidden position-relative">
+        <img class="w-100" src="${data.meals[index].strMealThumb}" alt="">
+        
+        <a href="../html files/info.html"> <div  class="layer d-flex  align-items-center  ">
+        <h2 class="fw-bolder">${data.meals[index].strMeal}</h2>
+        </div></a>
+        </div>
+        </div>`;
+  } else {
+    cartona.innerHTML = "";
+    flag1 = 1;
+    cartona.innerHTML += `<div class="col-lg-3 col-md-4 col-12 ">
+    <div id="${data.meals[index].idMeal}" class="inner rounded-3 overflow-hidden position-relative">
+    <img class="w-100" src="${data.meals[index].strMealThumb}" alt="">
+    
+                                   <a href="../html files/info.html"> <div  class="layer d-flex  align-items-center  ">
+                                         <h2 class="fw-bolder">${data.meals[index].strMeal}</h2>
+                                         </div></a>
+                                    </div>
+                            </div>`;
+  }
+}
+
+
 function putPic(cartona, index) {
   if (flag1 == 1) {
     cartona.innerHTML += `<div class="col-lg-3 col-md-4 col-12 ">
